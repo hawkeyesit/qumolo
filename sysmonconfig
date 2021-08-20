@@ -1,0 +1,11 @@
+<Sysmon schemaversion="4.70">
+	<EventFiltering>
+		<ProcessCreate onmatch="exclude">
+			<IntegrityLevel>System</IntegrityLevel>
+			<ParentImage> condition ="contains">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe </ParentImage>
+			<ParentCommandLine condition="contains">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe /Embedding </ParentCommandLine>
+		</ProcessCreate>
+		<ProcessTerminate onmatch="include">
+		</ProcessTerminate>
+	</EventFiltering>
+</Sysmon>
